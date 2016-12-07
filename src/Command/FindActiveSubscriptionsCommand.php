@@ -4,13 +4,13 @@ namespace jschreuder\MailCampToolbox\Command;
 
 use jschreuder\MailCampToolbox\Entity\Subscription;
 use jschreuder\MailCampToolbox\MailCampClient;
-use jschreuder\MailCampToolbox\Message\FindSubscriptionsCall;
+use jschreuder\MailCampToolbox\Message\FindActiveSubscriptionsCall;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class FindSubscriptionsCommand extends Command
+class FindActiveSubscriptionsCommand extends Command
 {
     /** @var  MailCampClient */
     private $mailcamp;
@@ -30,7 +30,7 @@ class FindSubscriptionsCommand extends Command
     public function execute(InputInterface $input, OutputInterface $output)
     {
         /** @var  Subscription[] $subscriptions */
-        $subscriptions = $this->mailcamp->process(new FindSubscriptionsCall($email = $input->getArgument('email')));
+        $subscriptions = $this->mailcamp->process(new FindActiveSubscriptionsCall($email = $input->getArgument('email')));
         foreach ($subscriptions as $subscription) {
             $output->writeln($subscription->getEmailAddress() . ' is in list ' . $subscription->getListName());
         }

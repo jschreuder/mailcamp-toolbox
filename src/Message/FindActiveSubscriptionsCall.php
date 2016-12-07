@@ -4,7 +4,7 @@ namespace jschreuder\MailCampToolbox\Message;
 
 use jschreuder\MailCampToolbox\Entity\Subscription;
 
-class FindSubscriptionsCall implements CallInterface
+class FindActiveSubscriptionsCall implements CallInterface
 {
     /** @var  string */
     private $email;

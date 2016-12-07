@@ -41,14 +41,16 @@ class MailCampClient
 
     private function createXml(CallInterface $message)
     {
-        return '<xmlrequest>
-    <username>'.$this->username.'</username>
-    <usertoken>'.$this->token.'</usertoken>
-    <requesttype>'.$message->getType().'</requesttype>
-    <requestmethod>'.$message->getMethod().'</requestmethod>
-    <details>
-        '.$message->getDetails().'
-    </details>
-</xmlrequest>';
+        return '
+            <xmlrequest>
+                <username>'.$this->username.'</username>
+                <usertoken>'.$this->token.'</usertoken>
+                <requesttype>'.$message->getType().'</requesttype>
+                <requestmethod>'.$message->getMethod().'</requestmethod>
+                <details>
+                    '.$message->getDetails().'
+                </details>
+            </xmlrequest>
+        ';
     }
 }

@@ -2,7 +2,7 @@
 MailCamp Toolbox
 ================
 
-Both a library and a set of CLI tools for working with `MailCamp's API<http://www.mailcamp.nl/api.html>`_ written in
+Both a library and a set of CLI tools for working with `MailCamp's API <http://www.mailcamp.nl/api.html>`_ written in
 PHP. The library can be used to implement more complex usages, the CLI commands provide examples for how to work with
 them.
 
@@ -11,7 +11,7 @@ Requirements
 ------------
 
 * PHP 5.6 or 7.0
-* `Composer<https://getcomposer.org/>`_
+* `Composer <https://getcomposer.org/>`_
 
 ------------
 Installation
@@ -34,9 +34,12 @@ On the commandline just call ``./app.php`` to get a list of available commands.
 
 * ``./app.php list:list`` - will retrieve a list of all mailinglists and output their IDs and names
 * ``./app.php subscriber:list 123`` - will retrieve all active subscribers in list with ID ``123``
-* ``./app.php subscriber:find example@test.com`` - will retrieve all lists the e-mail address has active subscriptions for
-* ``./app.php subscriber:unsubscribe example@test.com`` - will unsubscribe ``example@test.com`` from list with ID ``123``
-* ``./app.php list:compare-txt file.txt 123`` - compares e-mail addresses in file to e-mail addresses in list with ID ``123``
+* ``./app.php subscriber:find example@test.com`` - will retrieve all lists the e-mail address has active subscriptions
+  for
+* ``./app.php subscriber:unsubscribe example@test.com`` - will unsubscribe ``example@test.com`` from list with ID
+  ``123``
+* ``./app.php list:compare-txt file.txt 123`` - compares e-mail addresses in file to e-mail addresses in list with ID
+  ``123``
 
 -------------
 Library usage
@@ -51,7 +54,7 @@ what data is necessary for instantiation and what type of response-data you can 
 
 Currently the following calls are available:
 
-* FindActiveListSubscribers - find all active subscribers for a list
-* FindActiveSubscriptions - find all active subscriptions to list for an e-mail address
-* GetLists - retrieve all mailinglists
-* UnsubscribeSubscriber - unsubscribe e-mail address from specific list
+* ``FindActiveListSubscribers`` - find all active subscribers for a list
+* ``FindActiveSubscriptions`` - find all active subscriptions to list for an e-mail address
+* ``GetLists`` - retrieve all mailinglists
+* ``UnsubscribeSubscriber`` - unsubscribe e-mail address from specific list

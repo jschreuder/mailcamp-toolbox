@@ -36,6 +36,7 @@ On the commandline just call ``./app.php`` to get a list of available commands.
 * ``./app.php subscriber:list 123`` - will retrieve all active subscribers in list with ID ``123``
 * ``./app.php subscriber:find example@test.com`` - will retrieve all lists the e-mail address has active subscriptions for
 * ``./app.php subscriber:unsubscribe example@test.com`` - will unsubscribe ``example@test.com`` from list with ID ``123``
+* ``./app.php list:compare-txt file.txt 123`` - compares e-mail addresses in file to e-mail addresses in list with ID ``123``
 
 -------------
 Library usage

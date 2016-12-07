@@ -22,7 +22,7 @@ class GetListsCommand extends Command
 
     public function configure()
     {
-        $this->setName('lists:get');
+        $this->setName('list:list');
     }
 
     public function execute(InputInterface $input, OutputInterface $output)

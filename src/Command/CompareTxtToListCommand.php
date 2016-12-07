@@ -35,7 +35,7 @@ class CompareTxtToListCommand extends Command
         $txtFile = $input->getArgument('txtFile');
         $listId = intval($input->getArgument('listId'));
 
-        $output->writeln('Checking CSV file');
+        $output->writeln('Checking TXT file');
         if (!file_exists($txtFile) || !is_readable($txtFile)) {
             throw new \RuntimeException('Unreadable or non-existing TXT file: ' . $txtFile);
         }
@@ -78,25 +78,23 @@ class CompareTxtToListCommand extends Command
 
         // GENERATE OUTPUT
         $output->writeln('');
-        $output->writeln('----------------------------------------');
-        $output->writeln('E-mail addresses in Mailcamp, not in TXT');
-        $output->writeln('----------------------------------------');
+        $output->writeln('--------------------------------------------------------------');
+        $output->writeln('E-mail addresses in Mailcamp, not in TXT: ' . count($notInTxt));
+        $output->writeln('--------------------------------------------------------------');
         foreach ($notInTxt as $email) {
             $output->writeln($email);
         }
         $output->writeln('');
-        $output->writeln('');
-        $output->writeln('----------------------------------------');
-        $output->writeln('E-mail addresses in TXT, not in Mailcamp');
-        $output->writeln('----------------------------------------');
+        $output->writeln('--------------------------------------------------------------');
+        $output->writeln('E-mail addresses in TXT, not in Mailcamp: ' . count($notInMailCamp));
+        $output->writeln('--------------------------------------------------------------');
         foreach ($notInMailCamp as $email) {
             $output->writeln($email);
         }
         $output->writeln('');
-        $output->writeln('');
-        $output->writeln('----------------------------------------');
-        $output->writeln('Addresses matched: ' . count($found));
-        $output->writeln('----------------------------------------');
+        $output->writeln('--------------------------------------------------------------');
+        $output->writeln('Total e-mail addresses matched: ' . count($found));
+        $output->writeln('--------------------------------------------------------------');
         $output->writeln('');
     }
 }

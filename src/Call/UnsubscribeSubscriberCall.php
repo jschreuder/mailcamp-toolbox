@@ -2,6 +2,9 @@
 
 namespace jschreuder\MailCampToolbox\Call;
 
+/**
+ * API Call to unsubscribe an e-mail address form a mailinglist
+ */
 class UnsubscribeSubscriberCall implements CallInterface
 {
     /** @var  string */
@@ -34,10 +37,16 @@ class UnsubscribeSubscriberCall implements CallInterface
     {
         return '
             <emailaddress>'.$this->email.'</emailaddress>
-			<listid>'.$this->listId.'</listid>
+            <listid>'.$this->listId.'</listid>
         ';
     }
 
+    /**
+     * Voids the response, either succeeds or will throw an exception on failure
+     *
+     * @param   \SimpleXMLElement $response
+     * @return  null
+     */
     public function parseResponse(\SimpleXMLElement $response)
     {
         return null;

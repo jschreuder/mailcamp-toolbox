@@ -4,6 +4,9 @@ namespace jschreuder\MailCampToolbox\Call;
 
 use jschreuder\MailCampToolbox\Entity\Subscription;
 
+/**
+ * API Call to retrieve all active subscriptions in a mailinglist
+ */
 class FindActiveListSubscribersCall implements CallInterface
 {
     /** @var  int */
@@ -43,6 +46,12 @@ class FindActiveListSubscribersCall implements CallInterface
         ';
     }
 
+    /**
+     * Returns a list of Subscription instances
+     *
+     * @param   \SimpleXMLElement $response
+     * @return  Subscription[]
+     */
     public function parseResponse(\SimpleXMLElement $response)
     {
         $subscriptions = [];

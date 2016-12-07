@@ -4,6 +4,9 @@ namespace jschreuder\MailCampToolbox\Call;
 
 use jschreuder\MailCampToolbox\Entity\MailingList;
 
+/**
+ * API Call to retrieve a list of all mailinglists
+ */
 class GetListsCall implements CallInterface
 {
     public function getType()
@@ -27,6 +30,12 @@ class GetListsCall implements CallInterface
         ';
     }
 
+    /**
+     * Returns an array of MailingList instances
+     *
+     * @param   \SimpleXMLElement $response
+     * @return  MailingList[]
+     */
     public function parseResponse(\SimpleXMLElement $response)
     {
         $lists = [];

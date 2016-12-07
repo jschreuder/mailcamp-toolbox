@@ -1,0 +1,10 @@
+<?php
+
+// THIS IS AN EXAMPLE
+// Copy the contents to main.php and enter your own credentials
+
+return [
+    'mailcamp.apiEndpoint' => 'http://www.uwdomein.nl/mailcamp/xml.php',
+    'mailcamp.username' => 'admin',
+    'mailcamp.token' => '78701d1ba2588ea1991f44299b814129658c6947',
+];

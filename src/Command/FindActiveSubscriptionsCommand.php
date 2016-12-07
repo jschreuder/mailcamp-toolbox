@@ -4,7 +4,7 @@ namespace jschreuder\MailCampToolbox\Command;
 
 use jschreuder\MailCampToolbox\Entity\Subscription;
 use jschreuder\MailCampToolbox\MailCampClient;
-use jschreuder\MailCampToolbox\Message\FindActiveSubscriptionsCall;
+use jschreuder\MailCampToolbox\Call\FindActiveSubscriptionsCall;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace jschreuder\MailCampToolbox\Message;
+namespace jschreuder\MailCampToolbox\Call;
 
 class UnsubscribeSubscriberCall implements CallInterface
 {

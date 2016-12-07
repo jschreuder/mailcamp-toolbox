@@ -4,7 +4,7 @@ namespace jschreuder\MailCampToolbox\Command;
 
 use jschreuder\MailCampToolbox\Entity\MailingList;
 use jschreuder\MailCampToolbox\MailCampClient;
-use jschreuder\MailCampToolbox\Message\GetListsCall;
+use jschreuder\MailCampToolbox\Call\GetListsCall;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

@@ -3,7 +3,7 @@
 namespace jschreuder\MailCampToolbox;
 
 use Guzzle\Http\Client;
-use jschreuder\MailCampToolbox\Message\CallInterface;
+use jschreuder\MailCampToolbox\Call\CallInterface;
 
 class MailCampClient
 {

@@ -3,7 +3,7 @@
 namespace jschreuder\MailCampToolbox\Command;
 
 use jschreuder\MailCampToolbox\MailCampClient;
-use jschreuder\MailCampToolbox\Message\UnsubscribeSubscriberCall;
+use jschreuder\MailCampToolbox\Call\UnsubscribeSubscriberCall;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

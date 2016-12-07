@@ -1,20 +1,20 @@
 <?php
 
-namespace jschreuder\MailCampToolbox\Message;
+namespace jschreuder\MailCampToolbox\Call;
 
 use jschreuder\MailCampToolbox\Entity\Subscription;
 
-class FindActiveListSubscribersCall implements CallInterface
+class FindActiveSubscriptionsCall implements CallInterface
 {
-    /** @var  int */
-    private $listId;
+    /** @var  string */
+    private $email;
 
     /**
-     * @param  int $listId
+     * @param  string $email
      */
-    public function __construct($listId)
+    public function __construct($email)
     {
-        $this->listId = $listId;
+        $this->email = $email;
     }
 
     public function getType()
@@ -31,8 +31,8 @@ class FindActiveListSubscribersCall implements CallInterface
     {
         return '
             <searchinfo>
-                <List><array>'.$this->listId.'</array></List>
-                <Email></Email>
+                <List><array></array></List>
+                <Email>'.$this->email.'</Email>
                 <Confirmed>1</Confirmed>
                 <Status>a</Status>
             </searchinfo>

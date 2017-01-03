@@ -33,13 +33,18 @@ CLI Usage
 On the commandline just call ``./app.php`` to get a list of available commands.
 
 * ``./app.php list:list`` - will retrieve a list of all mailinglists and output their IDs and names
+* ``./app.php list:compare-txt file.txt 123`` - compares e-mail addresses in file to e-mail addresses in list with ID
+  ``123``
 * ``./app.php subscriber:list 123`` - will retrieve all active subscribers in list with ID ``123``
 * ``./app.php subscriber:find example@test.com`` - will retrieve all lists the e-mail address has active subscriptions
   for
 * ``./app.php subscriber:unsubscribe example@test.com`` - will unsubscribe ``example@test.com`` from list with ID
   ``123``
-* ``./app.php list:compare-txt file.txt 123`` - compares e-mail addresses in file to e-mail addresses in list with ID
-  ``123``
+* ``./app.php subscriber:find-all file.txt`` - checks all e-mail addresses in the file for active subscriptions and
+  outputs them to the CLI, optionally takes a 2nd string argument and will only output subscriptions to lists with a
+  name that contains the given string
+* ``./app.php subscriber:unsubscribe-all file.txt`` - similar to find-all but also unsubscribes each active
+  subscription, takes the same 2nd argument as well and will only subscribe from those matches when given
 
 -------------
 Library usage

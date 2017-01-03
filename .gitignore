@@ -1,4 +1,5 @@
 /.idea/
 /config/main.php
+/data/
 /vendor/
 composer.lock

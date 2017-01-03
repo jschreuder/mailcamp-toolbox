@@ -74,7 +74,7 @@ class CompareTxtToListCommand extends Command
         }
 
         // Create final list of e-mail addresses in MailCamp that were not in TXT file
-        $notInTxt = array_diff($subscribers, $found);
+        $notInTxt = array_diff($subscribers, array_unique($found));
 
         // GENERATE OUTPUT
         $output->writeln('');

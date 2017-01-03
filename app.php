@@ -11,6 +11,7 @@ $app->add(new \jschreuder\MailCampToolbox\Command\CompareTxtToListCommand($conta
 $app->add(new \jschreuder\MailCampToolbox\Command\FindActiveListSubscribersCommand($container['mailcamp.client']));
 $app->add(new \jschreuder\MailCampToolbox\Command\FindActiveSubscriptionsCommand($container['mailcamp.client']));
 $app->add(new \jschreuder\MailCampToolbox\Command\GetListsCommand($container['mailcamp.client']));
+$app->add(new \jschreuder\MailCampToolbox\Command\GetSubscriptionsCommand($container['mailcamp.client']));
 $app->add(new \jschreuder\MailCampToolbox\Command\UnsubscribeSubscriberCommand($container['mailcamp.client']));
 
 $app->run();

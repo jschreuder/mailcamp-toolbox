@@ -13,5 +13,6 @@ $app->add(new \jschreuder\MailCampToolbox\Command\FindActiveSubscriptionsCommand
 $app->add(new \jschreuder\MailCampToolbox\Command\GetListsCommand($container['mailcamp.client']));
 $app->add(new \jschreuder\MailCampToolbox\Command\GetSubscriptionsCommand($container['mailcamp.client']));
 $app->add(new \jschreuder\MailCampToolbox\Command\UnsubscribeSubscriberCommand($container['mailcamp.client']));
+$app->add(new \jschreuder\MailCampToolbox\Command\UnsubscribeAllCommand($container['mailcamp.client']));
 
 $app->run();

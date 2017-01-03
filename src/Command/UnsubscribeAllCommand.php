@@ -3,6 +3,7 @@
 namespace jschreuder\MailCampToolbox\Command;
 
 use jschreuder\MailCampToolbox\Call\FindActiveSubscriptionsCall;
+use jschreuder\MailCampToolbox\Call\UnsubscribeSubscriberCall;
 use jschreuder\MailCampToolbox\Entity\Subscription;
 use jschreuder\MailCampToolbox\MailCampClient;
 use Symfony\Component\Console\Command\Command;
@@ -10,7 +11,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class GetSubscriptionsCommand extends Command
+class UnsubscribeAllCommand extends Command
 {
     /** @var  MailCampClient */
     private $mailcamp;
@@ -23,10 +24,10 @@ class GetSubscriptionsCommand extends Command
 
     public function configure()
     {
-        $this->setName('subscriber:find-all')
+        $this->setName('subscriber:unsubscribe-all')
             ->setDescription('Get all subscriptions for e-mail addresses in the TXT file')
             ->addArgument('txtFile', InputArgument::REQUIRED)
-            ->addArgument('contains', InputArgument::OPTIONAL, 'Only show subscriptions to lists with names containing this value');
+            ->addArgument('contains', InputArgument::OPTIONAL, 'Only unsubscribe to lists with name containing this string');
     }
 
     public function execute(InputInterface $input, OutputInterface $output)
@@ -68,6 +69,7 @@ class GetSubscriptionsCommand extends Command
             $output->writeln('EMAIL: ' . $email);
             foreach ($lists as $list) {
                 $output->writeln(' - ' . $list->getListName() . ' [' . $list->getListId() . ']');
+                $this->mailcamp->process(new UnsubscribeSubscriberCall($email, $list->getListId()));
             }
         }
     }
